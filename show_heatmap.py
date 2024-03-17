@@ -109,7 +109,7 @@ def main(ext):
     html = img2html(fig)
     if ext=='.py':
         plt.close()
-
+    os.makedirs("./out", exist_ok=True)
     plt.savefig(f"./out/{title}.png")
     with open(f"./out/{title}.html", "w") as w:
         w.write(html)
